@@ -1,0 +1,76 @@
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet'
+          type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Isometric tile engine</title>
+    <style id="jsbin-css">
+        body {
+            margin: 0px; /* overflow: hidden;*/
+        }
+
+        #menu {
+            z-index: 99;
+            font-size: 4em;
+            position: absolute;
+            width: 20%;
+            left: 40%;
+            top: 40%;
+            font-family: 'Shadows Into Light Two', cursive;
+            text-align: center;
+            background-color: #f4e6cf;
+            border: 2px double #a4868f;
+            border-radius: 20px;
+            box-shadow: inset 0px 0px 20px #a4868f;
+            opacity: 0.5;
+        }
+
+        .textOverlay {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-family: Consolas;
+            font-weight: bold;
+            font-size: 0.7em;
+        }
+
+        #terrain {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div id="fuzzyTilesetContainer" style='position: absolute; border: 1px solid black;
+        top: 0px; left: 0px; background-color: white; height: 100%; overflow-y: scroll;'>
+    </div>
+    <span class='textOverlay'>
+        Isometric tile engine with diamond Square terrain generation<br />
+        <a href='http://dwight.skyon.be/'>by drake7707</a><br />
+        Hotkeys:<br />
+        - F: toggle fuzzy borders<br />
+        - Space/click: toggle scrolling<br />
+        - T: toggle fuzzy tileset<br />
+        - H: toggle this help<br />
+        - R: full redraw<br />
+        - D: toggle height map<br />
+        - Up/Down: zoom out/in<br />
+        <br />
+        <span id="lblDebug"></span>
+    </span>
+    <canvas id="picScreen" width="1000px" height="1000px"></canvas>
+    <div id='menu' style='display: visible'>
+        <span>Loading</span>
+    </div>
+    <div style="display: none">
+        <img id="tileset" src="http://i.imgur.com/D5uGtNk.png" />
+        <img id="tileshadow" src="http://i.imgur.com/5qRuyeI.png" />
+    </div>
+    <div id="terrain" style='display: none'>
+    </div>
+    <script src="tileengine.js"></script>
+</body>
+</html>
