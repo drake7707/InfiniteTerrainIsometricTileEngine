@@ -55,7 +55,7 @@ var tileshadow;
 // the dimensions of each chunk
 var boardWidth = 8;
 var boardHeight = 8;
-var boardDepth = 64;
+var boardDepth = 16;
 
 var chunks = [];
 var chunksOnRow = 4;
